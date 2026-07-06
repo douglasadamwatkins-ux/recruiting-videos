@@ -1,0 +1,6 @@
+# CODEOWNERS file — replace the placeholder with actual GitHub usernames or teams
+# Examples:
+#  * @your-github-username
+#  /src/ @your-github-username
+
+* @your-github-username

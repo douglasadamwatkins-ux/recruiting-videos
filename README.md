@@ -5,6 +5,13 @@
 Grayson's Catching and Batting Video archive for recruiting
 ---
 
+## CI status
+
+- `CI` runs the repository-wide test suite on every push and pull request.
+- `Boxscore Analyzer` is a dedicated workflow for the `skills/boxscore_analyzer` package, including parser and integration tests for the box score skill.
+
+These badges reflect the current pass/fail status of each workflow.
+
 # Workspace Skeleton
 
 This repository contains a minimal Python project skeleton created by GitHub Copilot.

@@ -40,3 +40,11 @@ Run tests:
 ```bash
 pytest
 ```
+
+Run the boxscore analyzer skill locally:
+
+```bash
+PYTHONPATH=skills/boxscore_analyzer/src python3 -m boxscore_analyzer.cli path/to/boxscore_image.png
+```
+
+Replace `path/to/boxscore_image.png` with the path to your sample image file.

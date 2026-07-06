@@ -8,31 +8,31 @@ Grayson's Catching and Batting Video archive for recruiting
 ## CI status
 
 - `CI` runs the repository-wide test suite on every push and pull request.
-- `Boxscore Analyzer` is a dedicated workflow for the `skills/boxscore_analyzer` package, including parser and integration tests for the box score skill.
+- `Boxscore Analyzer` is the dedicated workflow for the `skills/boxscore_analyzer` package, including parser and integration tests for the box score skill.
 
 These badges reflect the current pass/fail status of each workflow.
 
 # Workspace Skeleton
 
-This repository contains a minimal Python project skeleton created by GitHub Copilot.
+This repository contains a minimal Python project skeleton with a dedicated `boxscore_analyzer` skill package.
 
 Structure:
 
-- README.md - this file
-- .gitignore - standard ignores
-- src/ - source code
-- tests/ - tests (pytest)
-- requirements.txt - runtime/test deps
-- pyproject.toml - build metadata
+- `README.md` - this file
+- `.gitignore` - standard ignores
+- `requirements.txt` - runtime/test dependencies
+- `pyproject.toml` - build metadata
+- `skills/boxscore_analyzer/` - dedicated skill package with parser, OCR, stats, CLI, and tests
 
 Quick start
 
-Install requirements:
+Install requirements and editable skill package:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+python -m pip install -e skills/boxscore_analyzer
 ```
 
 Run tests:
@@ -44,7 +44,7 @@ pytest
 Run the boxscore analyzer skill locally:
 
 ```bash
-PYTHONPATH=skills/boxscore_analyzer/src python3 -m boxscore_analyzer.cli path/to/boxscore_image.png
+python3 -m boxscore_analyzer.cli path/to/boxscore_image.png
 ```
 
 Replace `path/to/boxscore_image.png` with the path to your sample image file.

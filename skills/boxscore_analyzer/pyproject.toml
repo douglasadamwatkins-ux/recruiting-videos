@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boxscore-analyzer"
+version = "0.1.0"
+description = "Boxscore analyzer skill for extracting baseball stats from box score images."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pillow",
+    "pytesseract",
+    "numpy",
+    "pandas",
+]
+
+[project.urls]
+homepage = "https://github.com/douglasadamwatkins-ux/recruiting-videos"

@@ -57,7 +57,7 @@ def test_sample_text_fixture_parser():
     raw = sample_path.read_text()
     parsed = parser.parse_boxscore_text(raw)
     assert "players" in parsed
-    assert parsed["players"][0]["full_name"] == "J Bradle"
+    assert parsed["players"][0]["full_name"] == "John Bradley"
     assert parsed["players"][0]["number"] == 14
     assert parsed["players"][1]["full_name"] == "Joseph Farmer"
 

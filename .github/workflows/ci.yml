@@ -32,5 +32,29 @@ jobs:
           if [ -f skills/boxscore_analyzer/requirements.txt ]; then pip install -r skills/boxscore_analyzer/requirements.txt; fi
       - name: Run general tests
         run: PYTHONPATH=skills/boxscore_analyzer/src pytest -q
-      - name: Run skill parser integration test
+
+  skill:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.10, 3.11]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f skills/boxscore_analyzer/requirements.txt ]; then pip install -r skills/boxscore_analyzer/requirements.txt; fi
+      - name: Run skill parser tests
         run: PYTHONPATH=skills/boxscore_analyzer/src pytest -q skills/boxscore_analyzer/tests/test_integration.py

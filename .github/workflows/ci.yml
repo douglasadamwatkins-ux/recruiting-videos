@@ -29,5 +29,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f skills/boxscore_analyzer/requirements.txt ]; then pip install -r skills/boxscore_analyzer/requirements.txt; fi
       - name: Run tests
-        run: pytest -q
+        run: PYTHONPATH=skills/boxscore_analyzer/src pytest -q

@@ -1,6 +1,6 @@
 # recruiting-videos
 
-[![CI](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/ci.yml/badge.svg)](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/ci.yml)
+[![CI](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/ci.yml/badge.svg)](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/ci.yml) [![Boxscore Analyzer](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/boxscore-analyzer.yml/badge.svg)](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/boxscore-analyzer.yml)
 
 Grayson's Catching and Batting Video archive for recruiting
 ---

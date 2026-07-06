@@ -1,4 +1,6 @@
+import os
 import pytest
+from pathlib import Path
 from PIL import Image
 
 from boxscore_analyzer import ocr, parser, stats
@@ -46,6 +48,18 @@ John Bradley #14 CF
     parsed = parser.parse_boxscore_text(raw)
     assert parsed["players"][0]["number"] == 14
     assert parsed["players"][0]["full_name"] == "John Bradley"
+
+
+def test_sample_text_fixture_parser():
+    sample_path = Path(__file__).resolve().parents[1] / "samples" / "boxscore_sample_text.txt"
+    assert sample_path.exists(), "Sample boxscore text fixture must exist"
+
+    raw = sample_path.read_text()
+    parsed = parser.parse_boxscore_text(raw)
+    assert "players" in parsed
+    assert parsed["players"][0]["full_name"] == "J Bradle"
+    assert parsed["players"][0]["number"] == 14
+    assert parsed["players"][1]["full_name"] == "Joseph Farmer"
 
 
 def test_ocr_parser_integration(monkeypatch, tmp_path):

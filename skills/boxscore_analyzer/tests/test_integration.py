@@ -30,6 +30,23 @@ def test_parser_on_sample_text():
     assert "players" in parsed
     assert len(parsed["players"]) >= 5
 
+    # Ensure roster matching preserves the number and full name when present.
+    first_player = parsed["players"][0]
+    assert first_player["number"] == 14
+    assert first_player["full_name"] == "J Bradle"
+
+
+def test_parser_full_name_matching():
+    # Simulate a full roster line plus the shortened lineup reference.
+    raw = """GBG COLORADO 2029
+LINEUP AB R H RBI BB SO
+J Bradle #14 (CF) 3 0 0 0 0 0
+John Bradley #14 CF
+"""
+    parsed = parser.parse_boxscore_text(raw)
+    assert parsed["players"][0]["number"] == 14
+    assert parsed["players"][0]["full_name"] == "John Bradley"
+
 
 def test_ocr_parser_integration(monkeypatch, tmp_path):
     # create a small blank image file to pass to ocr_image

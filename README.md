@@ -1,7 +1,8 @@
 # recruiting-videos
 
-Grayson's Catching and Batting Video archive for recruiting
+[![CI](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/ci.yml/badge.svg)](https://github.com/douglasadamwatkins-ux/recruiting-videos/actions/workflows/ci.yml)
 
+Grayson's Catching and Batting Video archive for recruiting
 ---
 
 # Workspace Skeleton

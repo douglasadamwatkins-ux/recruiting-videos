@@ -1,6 +1,5 @@
-# CODEOWNERS file — replace the placeholder with actual GitHub usernames or teams
-# Examples:
-#  * @your-github-username
-#  /src/ @your-github-username
+# CODEOWNERS — updated
+# douglasadamwatkins-ux
+# Assign repository ownership to the specified GitHub username/team below.
 
-* @your-github-username
+* @douglasadamwatkins-ux

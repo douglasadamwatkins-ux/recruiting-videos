@@ -32,4 +32,4 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python -m pip install -e skills/boxscore_analyzer
       - name: Run skill parser tests
-        run: pytest -q skills/boxscore_analyzer/tests/test_integration.py
+        run: PYTHONPATH=. pytest -q skills/boxscore_analyzer/tests/test_integration.py
